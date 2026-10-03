@@ -1,19 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
+        List<Empleado> lstEmpleados = new ArrayList<>();
+        Administrativo a1 = new Administrativo(1234, "Pedro Lopez", 2000000);
 
-        EmpleadoHijo e1 = new EmpleadoHijo("PEDRO", "2222", 1500000);
+        Vendedor v1 = new Vendedor(9876, "Diana Torres", 1500000, 1000000);
 
-        EmpleadoHoras eh1 = new EmpleadoHoras("Juan", "1111", 2100000, 16);
+        lstEmpleados.add(a1);
+        lstEmpleados.add(v1);
 
-        System.out.println("EMPLEADO HIJO");
-        e1.mostrarDatos();
-        System.out.println(e1.calcularPago());
 
-        System.out.println("EMPLEADO HORAS");
-        eh1.mostrarDatos();
-        System.out.println(eh1.calcularPago());
+        for (Empleado e : lstEmpleados) {
+            System.out.println(e.nombre);
 
+        }
+
+
+        List<Prueba> lstPrueba = new ArrayList<>();
+        Scanner teclado = new Scanner(System.in);
+        String codigo, nombre, correo;
+        System.out.println("INGRESE EL CODIGO");
+        codigo = teclado.next();
+
+        System.out.println("INGRESE SU NOMBRE");
+        nombre = teclado.next();
+
+        System.out.println("INGRESE SU CORREO");
+        correo = teclado.next();
+        Prueba p1 = new Prueba(codigo,nombre,correo);
+        lstPrueba.add(p1);
+        lstPrueba.add(p1);
 
     }
 }
